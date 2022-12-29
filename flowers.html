@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flower Page</title>
+    <script src="https://kit.fontawesome.com/c83c965a44.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/flw.css" />
+
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+
+    <!-- search-bar -->
+    <div id="topnav">
+        <div id="logodiv">
+            <img src="../../logo.png" alt="logo" id="logo" height="100px"/>
+        </div>
+
+        <img src="https://www.skillsforcare.org.uk/site-elements/images/icons/Green-Search-Icon.png" alt="submit" id="searchicon" />
+
+        <div id="searchbar">
+            <input type="text" placeholder="Search.." id="textsearch" />
+        </div>
+        <div id="cartbar">
+            <input type="text" placeholder="0" id="cartsearch" />
+        </div>
+        <div>
+            <a href="../cartpg/cartpg.html"> <img src="https://www.freeiconspng.com/uploads/green-shopping-cart-icon-5.png" alt="carticon" id="carticon" /></a>
+        </div>
+    </div>
+
+
+    <!-- The navigation menu -->
+    <div class="navbar">
+        <div class="subnav">
+            <button class="subnavbtn">
+      PLANTS<i class="fa fa-caret-down"></i>
+    </button>
+            <div class="subnav-content">
+                <a href="flw.html">Flowering Plan</a>
+                <a href="#">Gift Plan</a>
+                <a href="#">Plants By Feature</a>
+                <a href="#">Plants By Location</a>
+                <a href="#">Top Plants</a>
+                <a href="#">Plants By Type</a>
+                <a href="#">Foliage Plants</a>
+                <a href="#">Flowers By Season</a>
+            </div>
+        </div>
+
+        <div class="subnav">
+            <button class="subnavbtn">
+      SEEDS & BULBS <i class="fa fa-caret-down"></i>
+    </button>
+            <div class="subnav-content">
+                <a href="#">Vegetable Seeds</a>
+                <a href="#">Flower Bulbs</a>
+                <a href="#">flower Seeds</a>
+                <a href="#">Foresty Seeds</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">
+      POTS & PLANTERS <i class="fa fa-caret-down"></i>
+    </button>
+            <div class="subnav-content">
+                <a href="#">All Plastic Pots</a>
+                <a href="#">Creamic Pots</a>
+                <a href="#">Designer Pots</a>
+                <a href="#">Geo Grow Bags</a>
+                <a href="#">Germintaion trays</a>
+                <a href="#">Grill/Railing Pots</a>
+                <a href="#">Hanging Baskets</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">
+      GARDEN DECOR<i class="fa fa-caret-down"></i>
+    </button>
+            <div class="subnav-content">
+                <a href="#">Birds Houses</a>
+                <a href="#">Fairy Garden</a>
+                <a href="#">Garden Fountains</a>
+                <a href="#">Garden Tools</a>
+                <a href="#">Pebbles</a>
+                <a href="#">Pot Stands</a>
+                <a href="#">Terrarium Garden</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <a href="./fertilizer.html" class="subnavbtn"> 
+            FERTILIZERS</a>
+
+        </div>
+        <a id="sale" href="./salespage.html"><span style="color: #f1c535">%</span> SALE!</a>
+        <!-- <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="User Icon"> -->
+        <div class="subnav">
+            <button class="subnavbtn">
+            MY ACCOUNT <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="./login.html">Login</a>
+                <a href="./register.html">Register</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="outerdiv">
+        <div id="heading">
+            <p>Flowering Plants</p>
+        </div>
+        <div id="productcontainer"></div>
+
+        <div id="filter">
+            <div id="sort_filter">
+                <p>Sort By :</p>
+                <select name="" id="sortbyprice" onchange="sortPrice()">
+          <option value="">Default</option>
+          <option value="high">High to Low</option>
+          <option value="low">Low to High</option>
+        </select>
+            </div>
+            <div id="salescontainer"></div>
+        </div>
+    </div>
+
+
+
+    <div id="fullwidth">
+        <div id="containerpayment">
+            <div class="footereachdiv">
+                <div class="imgg">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7LNCpXfawKGEuLZkNYLK4QXVh4w0xWxNn5YnNnFlp0CuUuxCL" alt="">
+                </div>
+
+                <h3>SECURE PAYMENT</h3>
+                <P>100% Secure Payment</P>
+            </div>
+
+            <div class="footereachdiv">
+                <div class="imgg">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTOMTzYeBf6h5wkiuQggtrQZGa3yak4i7r0_HTYC2drHLl0Nuxl" alt="">
+                </div>
+
+                <h3>FREE SHIPPING</h3>
+                <P>For Orders Above Rs. 599</P>
+            </div>
+
+            <div class="footereachdiv">
+                <div class="imgg">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR5Vsts6ZO9eKOiXjV6elzAsR47zs-YqkirAXC9Los7J-RK9fDS" alt="">
+                </div>
+
+                <h3>ONLINE NURSERY</h3>
+                <P>India's 1 Plants Shop</P>
+            </div>
+
+            <div class="footereachdiv" id="social">
+                <div>
+                    <p id="paraimg">SHOW US SOME <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Eo_circle_green_heart.svg/768px-Eo_circle_green_heart.svg.png"> ON SOCIAL MEDIA</p>
+                </div>
+
+                <div id="socialmediaimg">
+                    <img src="https://cdn-icons-png.flaticon.com/512/59/59439.png">
+                    <img src="https://cdn.icon-icons.com/icons2/791/PNG/512/TWITTER_icon-icons.com_65486.png" alt="">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25425.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25681.png" alt="">
+                    <img src="https://www.freeiconspng.com/thumbs/pinterest-logo-icon/pinterest-icon-15.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mainfooter">
+        <div class="maindiv">
+            <div class="box">
+                <h3>POLICY INFO</h3>
+
+                <div class="licontent">
+                    <ul class="stylebox1">
+                        <li>Cancel & Refund</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms & Condition</li>
+                        <li>Site Map</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>MY ACCOUNT</h3>
+
+                <div class="licontent">
+                    <ul class="stylebox2">
+                        <li>Order History</li>
+                        <li>Wish List (0)</li>
+                        <li>Newsletter</li>
+                        <li><a href="./login.html">Login</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>NEED HELP</h3>
+
+                <div class="licontent">
+                    <ul>
+                        <li>Contact Us</li>
+                        <li>Cancellation & Refund</li>
+                        <li>Policies</li>
+                        <li>Gift Vouchers</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box stylebox2">
+                <h3>COMPANY INFO</h3>
+
+                <div class="licontent">
+                    <ul>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Green Wall</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>OFFICE ADDRESS</h3>
+
+                <div class="licontent">
+                    <ul>
+                        <li>SRM University</li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <div id="last">
+        <img src="https://www.freepnglogos.com/uploads/copyright/copyright-symbol-nik-nak-old-peculiar-copyright-and-the-hargreves-report-28.png" alt="">
+        <p> Flaura by <strong>Loading...</strong> | WWW.Flaura.com</p>
+    </div>
+
+
+</body>
+
+</html>
+<script src="../data page/flwdata.js"></script>
+<script src="../scripts/flw.js"></script>
