@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* The navigation menu */
+        
+        .navbar {
+            overflow: hidden;
+            background-color: #3cb990;
+            /* width: 100%; */
+            margin: auto;
+            padding-left: 10%;
+            /* border: 1px solid red; */
+        }
+        /* Navigation links */
+        
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: right;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        /* The subnavigation menu */
+        
+        .subnav {
+            float: left;
+            overflow: hidden;
+        }
+        /* Subnav button */
+        
+        .subnav .subnavbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        /* Added a background color to navigation links on hover */
+        
+        .navbar a:hover,
+        .subnav:hover .subnavbtn {
+            background-color: #3cb990;
+        }
+        /* Style the subnav content - positioned absolute */
+        
+        .subnav-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: white;
+            width: 100%;
+            height: 200px;
+            z-index: 1;
+        }
+        /* Style the subnav links */
+        
+        .subnav-content a {
+            float: left;
+            color: black;
+            text-decoration: none;
+        }
+        /* Add a grey background color on hover */
+        
+        .subnav-content a:hover {
+            background-color: #3cb990;
+            color: white;
+        }
+        /* When you move the mouse over the subnav container, open the subnav content */
+        
+        .subnav:hover .subnav-content {
+            display: block;
+        }
+        
+        #sale {
+            font-size: 16px;
+        }
+        /* search------bar */
+        
+        #topnav {
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            /* border: 1px solid red; */
+        }
+        
+        #searchicon {
+            width: 4%;
+            height: 30px;
+            margin-left: 4%;
+            border: 1px solid silver;
+            /*rgb(235,235,237) */
+        }
+        
+        #searchbar {
+            height: 26px;
+            width: 300%;
+            margin-top: 0px;
+        }
+        
+        #cartbar {
+            height: 26px;
+            width: 30%;
+            margin-left: 2%;
+        }
+        
+        #textsearch {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #cartsearch {
+            width: 70%;
+            height: 100%;
+            text-align: right;
+            padding-left: 20px;
+        }
+        
+        #carticon {
+            width: 40px;
+            height: 30px;
+            border: 1px solid silver;
+        }
+        /* Body Style Section */
+        
+        #container2 {
+            width: 80%;
+            margin: auto;
+            /* border: 1px solid red; */
+            display: grid;
+            grid-template-columns: 80% 20%;
+            margin-bottom: 20px;
+        }
+        
+        #filluparea {
+            /* border: 1px solid green; */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 3%;
+            padding: 10px;
+        }
+        
+        #filluparea>div {
+            width: 90%;
+            /* border: 1px solid red; */
+            padding: 10px;
+            height: 370px;
+            background-color: rgb(247, 247, 247);
+        }
+        
+        .loginarea {
+            width: 100%;
+            /* border: 1px solid blue; */
+        }
+        
+        .loginarea>div {
+            margin-bottom: 10px;
+        }
+        
+        input {
+            width: 98%;
+            height: 30px;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        
+        #sidebar {
+            /* border: 1px solid rgb(224, 11, 224); */
+            padding-top: 10px;
+        }
+        
+        #sidebar>div:hover {
+            background-color: white;
+        }
+        
+        .sidebardivarea {
+            width: 100%;
+            border-bottom: 1px solid rgb(202, 201, 201);
+            padding: 15px 0px;
+            margin: 0px 0px;
+            background-color: rgb(245, 245, 245);
+        }
+        
+        .sidebardivarea>a {
+            padding-left: 5px;
+            color: rgb(68, 67, 67);
+            font-weight: 500;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        
+        .sidebardivarea>a::before {
+            content: ">";
+        }
+        /* ************* */
+        
+        .secondheadingtext {
+            background-color: rgb(95, 104, 116);
+            text-align: left;
+            font-weight: bold;
+            font-family: Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-size: 14px;
+            text-transform: none;
+            color: rgb(255, 255, 255);
+            padding: 8px 10px;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+        
+        h3,
+        p {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        
+        #submit {
+            float: left;
+            width: 90px;
+            height: 30px;
+            background-color: rgb(31, 187, 166);
+            margin: 10px 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        
+        .btn {
+            float: left;
+            width: 90px;
+            height: 30px;
+            background-color: rgb(31, 187, 166);
+            margin: 10px 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        
+        .loginarea {
+            height: 225px;
+            width: 99%;
+            /* border: 1px solid blue; */
+        }
+        
+        .loginarea>div {
+            margin-bottom: 10px;
+        }
+        
+        input {
+            width: 98%;
+            height: 30px;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        /* Footer Style Section */
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #fullwidth {
+            width: 100%;
+            background-color: rgb(226, 226, 226);
+        }
+        
+        #containerpayment {
+            width: 80%;
+            margin: auto;
+            /* border: 1px solid black; */
+            padding: 20px 0px 10px 0px;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: rgb(226, 226, 226);
+        }
+        
+        .footereachdiv {
+            width: 18%;
+            height: 100%;
+            /* border: 1px solid green; */
+        }
+        
+        .footereachdiv>h3,
+        p {
+            text-align: center;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .footereachdiv>h3 {
+            font-size: 16px;
+            font-stretch: narrower;
+        }
+        
+        .footereachdiv>p {
+            font-size: 14px;
+        }
+        
+        .footereachdiv>div>p>img {
+            width: 7%;
+        }
+        
+        .imgg>img {
+            width: 100%;
+            height: 50%;
+            margin: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        
+        .imgg {
+            width: 30%;
+            margin: auto;
+        }
+        
+        #socialmediaimg {
+            display: flex;
+        }
+        
+        #socialmediaimg>img {
+            width: 10%;
+            margin: auto;
+            padding: 21% 0% 7% 0%;
+        }
+        
+        #mainfooter {
+            width: 90%;
+            margin: auto;
+            /* border: 1px solid firebrick; */
+            margin-top: 30px;
+        }
+        
+        .maindiv {
+            display: flex;
+            justify-content: space-evenly;
+            /* border: 1px solid blue; */
+        }
+        
+        .box {
+            width: 20%;
+            /* border: 1px solid red; */
+            padding: 0px 10px;
+        }
+        
+        .box>h3 {
+            padding: 0px 0px 12px 30px;
+            margin: 12px 0px;
+            border-bottom: 1px solid gray;
+            color: rgb(95, 95, 95);
+        }
+        
+        #last {
+            text-align: center;
+        }
+        
+        #last>img {
+            width: 16px;
+            height: 16px;
+        }
+        
+        li {
+            list-style: none;
+            color: gray;
+        }
+        
+        .stylebox1>li::before {
+            content: ">";
+            color: black;
+            margin: 5px
+        }
+        
+        .stylebox2>li::before {
+            content: ">";
+            color: rgb(31, 187, 166);
+            margin: 5px
+        }
+        /* Responsive Section */
+        
+        @media only screen and (min-width:0px) and (max-width:400px) {
+            /* For Navbar Content */
+            #searchicon {
+                width: 7%;
+                display: none;
+                height: 20px;
+                margin-left: 1%;
+            }
+            #cartbar,
+            #searchbar {
+                display: none;
+            }
+            /* #searchbar {
+        height: 15px;
+    } */
+            #topnav {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 20px;
+                margin-bottom: 20px;
+                align-items: center;
+            }
+            #logo,
+            #logodiv,
+            #carticon {
+                border: 1px solid black;
+                height: 100%;
+            }
+            #carticon {
+                width: 100%;
+                height: 20px;
+            }
+            /* navbarmedia */
+            .navbar {
+                padding-left: 0%;
+            }
+            .subnav {
+                float: center;
+                overflow: hidden;
+            }
+            .subnav .subnavbtn {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+            #sale {
+                font-size: 12px;
+            }
+            /* For Body content */
+            #container2 {
+                width: 100%;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, 1fr);
+                grid-column-gap: 10px;
+                height: 850px;
+            }
+            #filluparea {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, 1fr);
+                grid-column-gap: 10px;
+                width: 90%;
+            }
+            #filluparea>div {
+                width: 90%;
+            }
+            #sidebar {
+                display: none;
+            }
+            #submit {
+                width: 50%;
+                margin-left: 50px;
+            }
+            .btn {
+                width: 50%;
+                margin-left: 50px;
+            }
+            /* For Footer media query */
+            #containerpayment {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+                width: 100%;
+            }
+            .footereachdiv {
+                width: 100%;
+            }
+            .licontent {
+                display: none;
+            }
+            .maindiv {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .box {
+                width: 100%;
+            }
+            .box>h3 {
+                margin: 0px;
+                padding: 5px 5px;
+                font-size: 15px;
+                margin: 10px 5px;
+            }
+            #last>p {
+                font-size: 12px;
+            }
+            #last>img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+        /* for medium screen */
+        
+        @media only screen and (min-width:401px) and (max-width:880px) {
+            /* For Navbar Content */
+            #searchicon {
+                width: 7%;
+                display: none;
+                height: 20px;
+                margin-left: 1%;
+            }
+            #cartbar {
+                display: none;
+            }
+            #searchbar {
+                height: 15px;
+            }
+            #topnav {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 20px;
+                margin-bottom: 20px;
+                align-items: center;
+            }
+            #logo,
+            #logodiv,
+            #carticon {
+                border: 1px solid black;
+                height: 100%;
+            }
+            #carticon {
+                width: 100%;
+                height: 20px;
+                padding-right: 20px;
+            }
+            /* navbarmedia */
+            .navbar {
+                padding-left: 0%;
+            }
+            .subnav {
+                float: center;
+                overflow: hidden;
+            }
+            .subnav .subnavbtn {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+            #sale {
+                font-size: 12px;
+            }
+            /* For Body Content   */
+            #container2 {
+                grid-template-columns: 1fr;
+                width: 90%;
+                margin: auto;
+            }
+            #filluparea {
+                grid-template-rows: 1fr;
+                padding-top: 10px;
+                width: 100%;
+            }
+            #sidebar {
+                display: none;
+            }
+            /* For Footer media query */
+            #containerpayment {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(2, 1fr);
+            }
+            .footereachdiv {
+                width: 100%;
+            }
+            .licontent {
+                display: none;
+            }
+            .maindiv {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(4, 1fr);
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .box {
+                width: 100%;
+            }
+            .box>h3 {
+                margin: 0px;
+                padding: 5px 5px;
+                font-size: 15px;
+                margin: 0px 10px;
+            }
+            #last>p {
+                font-size: 12px;
+            }
+            #last>img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+        /* meduium screen btwn 321px to 821px */
+        
+        @media screen and (min-width: 321px) and (max-width: 980px) {
+            #logo {
+                width: 100%;
+            }
+            #topnav {
+                width: 100%;
+                height: 20px;
+                margin-bottom: 30px;
+                align-items: center;
+            }
+            #searchicon {
+                width: 4%;
+                height: 30px;
+                margin-left: 1%;
+            }
+            #searchbar {
+                height: 25px;
+                width: 40%;
+            }
+            #cartbar {
+                border: none;
+                height: 25px;
+                width: 10%;
+                margin-left: 2%;
+            }
+            #carticon {
+                width: 25px;
+                height: 28px;
+                margin-left: 8px;
+                padding-right: 20px;
+                border: none;
+            }
+            /* navbarmedia */
+            .navbar {
+                padding-left: 1%;
+            }
+            .subnav {
+                float: center;
+                overflow: hidden;
+            }
+            .subnav .subnavbtn {
+                font-size: 14px;
+                padding: 12px 14px;
+            }
+            #sale {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navar HTML Section -->
+    <!-- search-bar -->
+    <div id="topnav">
+        <div id="logodiv">
+            <img src="../../logo.png" alt="Logo" id="logo"  height="100px"/>
+        </div>
+
+        <img src="https://www.skillsforcare.org.uk/site-elements/images/icons/Green-Search-Icon.png" alt="submit" id="searchicon" height="40px" />
+
+        <div id="searchbar">
+            <input type="text" placeholder="Search.." id="textsearch" />
+        </div>
+        <div id="cartbar">
+            <input type="text" placeholder="0" id="cartsearch" />
+        </div>
+        <div>
+            <img src="https://www.freeiconspng.com/uploads/green-shopping-cart-icon-5.png" alt="carticon" id="carticon" />
+        </div>
+    </div>
+
+
+    <!-- The navigation menu -->
+    <div class="navbar">
+        <div class="subnav">
+            <button class="subnavbtn">
+                PLANTS<i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="./flw.html">Flowering Plan</a>
+                <a href="#">Gift Plan</a>
+                <a href="#">Plants By Feature</a>
+                <a href="#">Plants By Location</a>
+                <a href="#">Top Plants</a>
+                <a href="#">Plants By Type</a>
+                <a href="#">Foliage Plants</a>
+                <a href="#">Flowers By Season</a>
+            </div>
+        </div>
+
+        <div class="subnav">
+            <button class="subnavbtn">
+                SEEDS & BULBS <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="#">Vegetable Seeds</a>
+                <a href="#">Flower Bulbs</a>
+                <a href="#">flower Seeds</a>
+                <a href="#">Foresty Seeds</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">
+                POTS & PLANTERS <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="#">All Plastic Pots</a>
+                <a href="#">Creamic Pots</a>
+                <a href="#">Designer Pots</a>
+                <a href="#">Geo Grow Bags</a>
+                <a href="#">Germintaion trays</a>
+                <a href="#">Grill/Railing Pots</a>
+                <a href="#">Hanging Baskets</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">
+                GARDEN DECOR<i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="#">Birds Houses</a>
+                <a href="#">Fairy Garden</a>
+                <a href="#">Garden Fountains</a>
+                <a href="#">Garden Tools</a>
+                <a href="#">Pebbles</a>
+                <a href="#">Pot Stands</a>
+                <a href="#">Terrarium Garden</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">
+                FERTILIZERS <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="#">Coco Bricks</a>
+                <a href="#">Compost</a>
+                <a href="#">Cow Manure</a>
+                <a href="#">Moist Balls</a>
+                <a href="#">Moss Sticks</a>
+                <a href="#">Plants Food</a>
+            </div>
+        </div>
+        <a id="sale" href="#"><span style="color: #f1c535">%</span> SALE!</a>
+        <!-- <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="User Icon"> -->
+        <div class="subnav">
+            <button class="subnavbtn">
+                MY ACCOUNT <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+            </div>
+        </div>
+    </div>
+    <!-- Body HTML Section -->
+    <!-- div content -->
+    <div id="container2">
+        <div id="filluparea">
+            <div>
+                <h1 class="secondheadingtext">New Customer</h1>
+                <div class="loginarea">
+                    <h3>Register Account</h3>
+                    <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
+                </div>
+                <hr>
+                <button class="btn"><a href="./register.html" style="color:white; text-decoration:none;">Sign Up</a></button>
+            </div>
+            <div>
+                <form id="loginform">
+                    <h1 class="secondheadingtext">Returning Customer</h1>
+                    <div class="loginarea">
+                        <h3>I am a returning customer</h3>
+
+                        <div>
+                            E-Mail Address <br>
+                            <input type="text" name="" id="email" placeholder="E-Mail Address">
+                        </div>
+                        <div>
+                            Password <br>
+                            <input type="text" name="" id="pass" placeholder="Password">
+                        </div>
+                        <p><a href="">Forgotten Password?</a></p>
+
+                    </div>
+                    <hr>
+                    <input type="submit" id="submit" value="login">
+
+                </form>
+            </div>
+
+        </div>
+        <div id="sidebar">
+            <div class="sidebardivarea">
+                <a href="">Login</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="./register.html">Register</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="">Forgotten Password</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="./login.html">My Account</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="">Wish List</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="./cartpg.html">Order History</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="">Downloads</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="">Reward Points</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="">Returns</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="">Transactions</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="">Newsletter</a>
+            </div>
+            <div class="sidebardivarea">
+                <a href="">Recurring payments</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer HTML Section -->
+    <div id="fullwidth">
+        <div id="containerpayment">
+            <div class="footereachdiv">
+                <div class="imgg">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7LNCpXfawKGEuLZkNYLK4QXVh4w0xWxNn5YnNnFlp0CuUuxCL" alt="">
+                </div>
+
+                <h3>SECURE PAYMENT</h3>
+                <P>100% Secure Payment</P>
+            </div>
+
+            <div class="footereachdiv">
+                <div class="imgg">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTOMTzYeBf6h5wkiuQggtrQZGa3yak4i7r0_HTYC2drHLl0Nuxl" alt="">
+                </div>
+
+                <h3>FREE SHIPPING</h3>
+                <P>For Orders Above Rs. 599</P>
+            </div>
+
+            <div class="footereachdiv">
+                <div class="imgg">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR5Vsts6ZO9eKOiXjV6elzAsR47zs-YqkirAXC9Los7J-RK9fDS" alt="">
+                </div>
+
+                <h3>ONLINE NURSERY</h3>
+                <P>India's 1 Plants Shop</P>
+            </div>
+
+            <div class="footereachdiv" id="social">
+                <div>
+                    <p id="paraimg">SHOW US SOME <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Eo_circle_green_heart.svg/768px-Eo_circle_green_heart.svg.png"> ON SOCIAL MEDIA</p>
+                </div>
+
+                <div id="socialmediaimg">
+                    <img src="https://cdn-icons-png.flaticon.com/512/59/59439.png">
+                    <img src="https://cdn.icon-icons.com/icons2/791/PNG/512/TWITTER_icon-icons.com_65486.png" alt="">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25425.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25681.png" alt="">
+                    <img src="https://www.freeiconspng.com/thumbs/pinterest-logo-icon/pinterest-icon-15.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mainfooter">
+        <div class="maindiv">
+            <div class="box">
+                <h3>POLICY INFO</h3>
+
+                <div class="licontent">
+                    <ul class="stylebox1">
+                        <li>Cancel & Refund</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms & Condition</li>
+                        <li>Site Map</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>MY ACCOUNT</h3>
+
+                <div class="licontent">
+                    <ul class="stylebox2">
+                        <li>Order History</li>
+                        <li>Wish List (0)</li>
+                        <li>Newsletter</li>
+                        <li><a href="./login.html">Login</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>NEED HELP</h3>
+
+                <div class="licontent">
+                    <ul>
+                        <li>Contact Us</li>
+                        <li>Cancellation & Refund</li>
+                        <li>Policies</li>
+                        <li>Gift Vouchers</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box stylebox2">
+                <h3>COMPANY INFO</h3>
+
+                <div class="licontent">
+                    <ul>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Green Wall</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>OFFICE ADDRESS</h3>
+
+                <div class="licontent">
+                    <ul>
+                        <li>SRM University</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <div id="last">
+        <img src="https://www.freepnglogos.com/uploads/copyright/copyright-symbol-nik-nak-old-peculiar-copyright-and-the-hargreves-report-28.png" alt="">
+        <p> Flaura by <strong>Loading...</strong>  | WWW.FLAURA.com</p>
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    document.querySelector("#loginform").addEventListener("submit", submitlogin);
+
+    var Arr = JSON.parse(localStorage.getItem("Plantsguru"))
+
+
+
+    function submitlogin(event) {
+        event.preventDefault();
+        var email = document.querySelector("#email").value;
+        var pass = document.querySelector("#pass").value;
+        var flag = false
+        for (var i = 0; i < Arr.length; i++) {
+
+            if (Arr[i].Email == email && Arr[i].Password == pass) {
+                flag = true;
+            }
+
+
+        }
+        if (flag == true) {
+            alert(" Succesfully Login");
+            window.location.href = "./flw.html"
+        } else {
+            alert("Invalid password");
+        }
+
+    }
+</script>
