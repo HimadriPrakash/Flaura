@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Page</title>
+    <link rel="stylesheet" href="../styles/otp.css" />
+</head>
+
+<body>
+    <div class="container">
+        <p>OTP is sent on your mobile number.OTP is valid for 5mins.</p>
+        <div class="otp">
+            <h3>OTP**</h3>
+            <div class="input-field">
+                <form>
+                    <input type="text" id="otp" placeholder="Otp 1234" />
+                    <input type="submit" id="pay" value="CONFIRM" />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit", pay);
+
+    function pay(event) {
+        event.preventDefault();
+        var otp = document.querySelector("#otp").value;
+        console.log(otp);
+        if (otp == 1234) {
+            alert("payment successful");
+            window.location.href = "./success.html";
+        } else if (otp === "") {
+            alert("Please fill otp");
+        } else if (otp !== 1234) {
+            alert("Wrong otp");
+        }
+    }
+</script>
